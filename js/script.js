@@ -34,9 +34,15 @@ const app = new Vue({
     cliccaNext: function () {
       //   alert("provaprova");
       this.indiceAttivo++;
+      if (this.indiceAttivo === this.slides.length) {
+        this.indiceAttivo = 0;
+      }
     },
     cliccaPrev: function () {
       this.indiceAttivo--;
+      if (this.indiceAttivo === -1) {
+        this.indiceAttivo = this.slides.length - 1;
+      }
     },
   },
 });
