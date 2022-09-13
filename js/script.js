@@ -30,4 +30,13 @@ const app = new Vue({
     ],
     indiceAttivo: 0,
   },
+  methods: {
+    cliccaNext: function () {
+      //   alert("provaprova");
+      this.indiceAttivo++;
+    },
+    cliccaPrev: function () {
+      this.indiceAttivo--;
+    },
+  },
 });
