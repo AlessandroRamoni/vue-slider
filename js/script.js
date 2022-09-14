@@ -29,8 +29,19 @@ const app = new Vue({
       },
     ],
     indiceAttivo: 0,
+    intervalId: undefined,
   },
+
+  mounted() {
+    console.log("mounted!");
+    this.intervalId = setInterval(this.cliccaNext, 3000);
+  },
+
   methods: {
+    createInterval() {
+      this.intervalId = setInterval(this.cliccaNext, 3000);
+    },
+
     cliccaNext: function () {
       //   alert("provaprova");
       this.indiceAttivo++;
@@ -38,7 +49,7 @@ const app = new Vue({
         this.indiceAttivo = 0;
       }
     },
-    cliccaPrev: function () {
+    cliccaPrev() {
       this.indiceAttivo--;
       if (this.indiceAttivo === -1) {
         this.indiceAttivo = this.slides.length - 1;
